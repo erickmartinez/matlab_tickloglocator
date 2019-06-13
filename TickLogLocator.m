@@ -8,14 +8,14 @@ function TickLogLocator(axh,spacing)
 % spacing : int
 %   The number of decades between ticks
 
-    % Enforce that he spacing is positive
+    % Enforce that the spacing is positive
     spacing     = abs(spacing);
     % Get the limits of the axis
     axlim       = axh.Limits;
     % Split the limits in to min and max
     axmin       = axlim(1);
     axmax       = axlim(2);
-    % Split the each limit ac
+    % Split the each limit using the scientific notation
     axmin_sci   = str2double(split(sprintf('%.0e',axmin),'e'));
     axmax_sci   = str2double(split(sprintf('%.0e',axmax),'e'));
     % Get the prefactor and exponent for the minimum value
